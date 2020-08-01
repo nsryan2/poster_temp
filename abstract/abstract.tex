@@ -23,6 +23,8 @@
 \usepackage[hang, flushmargin]{footmisc}
 \renewcommand *\footnoterule{}
 \graphicspath{{images /}}
+\usepackage[acronym,toc]{glossaries}
+\input{../acros}
 
 \title{Title
         \\ \vspace{0.5em}  Poster Abstract}
@@ -40,6 +42,7 @@
 
 This sentence is used as an example citation call ~\cite{call_tag}.
 
+Example acronym call \gls{SNF}
 
 \bibliographystyle{unsrt}
 \bibliography{bibliography.bib}
