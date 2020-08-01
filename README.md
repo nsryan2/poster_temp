@@ -56,15 +56,23 @@ For example, you can create the acronym ANS.
 
 Then, when you go to use it in your poster or abstract, the following code:
 
-    \gls{ANS} is the premier organization for those that embrace the nuclear sciences and technologies for their vital contributions to improving people’s lives and preserving the planet.
+    \gls{ANS} is the premier organization for those that embrace the nuclear sciences 
+    and technologies for their vital contributions to improving people’s lives and 
+    preserving the planet.
 
-    \gls{ANS} membership is open to all and consists of individuals from all walks of life; including engineers, doctors, students, educators, scientists, soldiers, advocates, government employees, and others.
+    \gls{ANS} membership is open to all and consists of individuals from all walks of 
+    life; including engineers, doctors, students, educators, scientists, soldiers, 
+    advocates, government employees, and others.
 
 will output:
 
-    The American Nuclear Society (ANS) is the premier organization for those that embrace the nuclear sciences and technologies for their vital contributions to improving people’s lives and preserving the planet.
+    The American Nuclear Society (ANS) is the premier organization for those that 
+    embrace the nuclear sciences and technologies for their vital contributions to 
+    improving people’s lives and preserving the planet.
 
-    ANS membership is open to all and consists of individuals from all walks of life; including engineers, doctors, students, educators, scientists, soldiers, advocates, government employees, and others.
+    ANS membership is open to all and consists of individuals from all walks of life; 
+    including engineers, doctors, students, educators, scientists, soldiers, 
+    advocates, government employees, and others.
     
 If you were to then add another reference to the acronym ANS before what was the first use, that addition would output `The American Nuclear Society (ANS)` and every subsequent entry would output `ANS`.
 
