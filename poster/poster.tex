@@ -1,0 +1,384 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Jacobs Landscape Poster
+% LaTeX Template
+% Version 1.1 (14/06/14)
+%
+% Created by:
+% Computational Physics and Biophysics Group, Jacobs University
+% https://teamwork.jacobs-university.de:8443/confluence/display/CoPandBiG/LaTeX+Poster
+% 
+% Further modified by:
+% Nathaniel Johnston (nathaniel@njohnston.ca)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[final]{beamer}
+
+\usepackage[scale=1.0]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+\usetheme{confposter} % Use the confposter theme supplied with this template
+
+\setbeamercolor{block title}{fg=dblue!80,bg=white} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. 
+% (1-(3+1)*0.025)/3 = 0.3
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{36in} % A0 width: 46.8in
+\setlength{\paperheight}{48in} % A0 height: 33.1in
+\setlength{\textwidth}{34in} % A0 width: 46.8in
+\setlength{\textheight}{46in} % A0 height: 33.1in
+\setlength{\sepwid}{0.025\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.3\paperwidth} % Width of one column
+\setlength{\twocolwid}{0.625\paperwidth} % Width of two columns
+\setlength{\threecolwid}{0.95\paperwidth} % Width of three columns
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+%-----------------------------------------------------------
+
+\usepackage{graphicx}  % Required for including images
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
+\usepackage{tabularx}
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.75\hsize}X}
+\newcolumntype{z}{>{\hsize=.65\hsize}X}
+
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{xspace}
+\usepackage{amsmath}
+\usepackage{exscale}
+
+\setbeamertemplate{bibliography item}[text]
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\title{%
+  \texorpdfstring{%
+    \makebox[\linewidth]{%
+      \makebox[0pt][l]{%
+        \raisebox{\dimexpr-\height+\baselineskip}[0pt][0pt]
+          {\includegraphics[height=2.5\baselineskip]{UIUC_Logo}}% Left logo
+      }\hfill
+      \makebox[0pt]{Simulation of Spent Nuclear Fuel loading}%
+      \hfill\makebox[0pt][r]{%
+        \raisebox{\dimexpr-\height+\baselineskip}[0pt][0pt]
+          {\includegraphics[height=3.3\baselineskip]{arfc_atom}}% Right logo
+      }%
+    }%
+  }
+  {Simulation of Spent Nuclear Fuel loading}
+  {into a Final Waste Repository}
+  {\vspace{1cm}}
+  } % Poster title
+
+\author{\textbf{Gwendolyn J. Chee}, Kathryn D. Huff}
+\institute{University of Illinios at Urbana-Champaign, Department of Nuclear, Plasma, and Radiological Engineering, Urbana, IL 61801}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+
+\begin{columns}[t,totalwidth=\threecolwid] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+
+\begin{column}{0.5\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The first column
+
+%----------------------------------------------------------------------------------------
+%	MOTIVATION
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Introduction}
+
+\textbf{Previous Work}
+
+Previous work towards studying repository loading have used: 
+\begin{itemize}
+	\item \gls{SNF} with an \textbf{average burnup composition} 
+	    \cite{greenberg_application_2012,johnson_optimizing_2016}
+	\item a \textbf{lumped capacitance thermal model} for calculating temperature 
+	      in a \Cyclus repository model \cite{huff_rapid_2017}
+\end{itemize}
+
+\vspace{0.7em}
+\textbf{Motivation}
+
+The goal of this work is to improve on the repository models 
+and use U.S. historical SNF inventory data in simulations 
+to more accurately study the loading of a waste repository. 
+
+These goals will be achieved by: 
+\begin{itemize}
+\item using UNF-ST$\&$DARDS \gls{UDB} \cite{peterson_unf_standards_2017} that has 
+\textbf{historic assembly-specific data} (e.g, isotopic composition, heat) in \Cyclus simulations 
+\item implementing a \textbf{more accurate thermal model} within a \Cyclus repository model 
+\end{itemize}
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVES
+%----------------------------------------------------------------------------------------
+\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
+\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+\begin{alertblock}{Objectives}
+\begin{itemize}
+        \item Create a \Cyclus spent fuel conditioning model that packages spent fuel 
+        bundles into packages which have user-defined properties. 
+		\item Create a \Cyclus medium-fidelity repository model that gives accurate 
+		time and spatial dependent temperature values and loads the repository
+		based on a user-selected loading strategy. 
+\end{itemize}
+
+\end{alertblock}
+
+%----------------------------------------------------------------------------------------
+%	Cyclus
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Cyclus}
+\Cyclus is an agent-based extensible framework for modeling flow of material 
+through user-defined nuclear fuel cycles \cite{huff_fundamental_2016}. 
+In \Cyclus, each facility in the fuel cycle is modeled individually 
+and the facilities interact with one another as independent \textit{agents}. 
+\begin{figure}
+	\includegraphics[width=0.9\linewidth]{Cyclus_graph}
+	\caption{\Cyclus API allows for modular build of simulations \cite{huff_fundamental_2016}}
+\end{figure}
+
+\end{block}
+
+\begin{block}{Spent Fuel Conditioning Model}
+The spent fuel conditioning model accepts spent fuel bundles and puts them into a cylindrical
+waste package. 
+	
+In the spent fuel conditioning model, the user can define variables:  
+
+For each layer, 
+\begin{itemize}
+	\item radius 
+	\item thermal conductivity 
+	\item thermal diffusivity
+\end{itemize}
+For each package,
+\begin{itemize}
+	\item Number of spent fuel bundles
+	\item Radius and height
+\end{itemize}
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{column}{\onecolwid} % The second column
+%----------------------------------------------------------------------------------------
+%	MODELS
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Waste Repository Model}
+The waste repository model accepts waste packages and emplaces them into 
+available positions within the waste repository based on a thermal criteria.  
+The thermal criteria is a temperature limit at the interface between the waste 
+package surface and the host geology, that is set based on the repository's host geology.
+
+\begin{table}[]
+	\label{tab:temp_limit}
+	\caption{Temperature limit at waste package surface, thermal conductivity 
+	and thermal diffusivity for each host geology \cite{sutton_investigations_2011}}
+	\begin{tabular}{|l|l|l|l|}
+	\hline
+	Rock Type & $T_{limit}$ [$^\circ$C] & k [$\frac{W}{mK}$] &  $\alpha$ [$\frac{m^2}{s}$]  \\ \hline
+	Granite   & 100 & 2.5  & 1.13\\ \hline
+	Clay      & 100 & 1.75 & 6.45\\ \hline
+	Salt      & 200 & 4.2  & 2.07\\ \hline
+	\end{tabular}
+\end{table}
+
+In the waste repository model, the user can define the variables: 
+	\begin{itemize}
+		\item Capacity
+		\item Distance between waste packages
+		\item Distance between drifts 
+		\item Repository host geology 
+		\item Loading Strategy 
+	\end{itemize}
+
+\vspace{0.7em}
+\textbf{Thermal Model}
+
+After the addition of new waste packages at each time step, the waste repository model 
+recalculates the temperature at each location in the repository. 
+If the addition of this new package causes its temperature to exceed the thermal 
+limit, it will be placed back into the buffer. 
+A thermal model that relies on a transient `outside' model and quasi-steady-state 
+`inside' model is used to accurately determine the temperature in the repository
+\cite{sutton_investigations_2011}. 
+
+\vspace{0.7em}
+\textbf{Transient `Outside' Model}
+
+The `outside' model assumes a homogenous medium with the \gls{EBS} replaced by the 
+geologic medium. 
+Figure \ref{fig:conceptual_layout} shows the conceptual layout of the central waste 
+package and the adjacent point and line sources. 
+
+\begin{figure}
+	\label{fig:conceptual_layout}
+	\includegraphics[width=1\linewidth]{outsidemodel}
+	\caption{`Outside' Model: Conceptual layout of the central waste package, its adjacent
+	point sources and adjacent line sources \cite{sutton_investigations_2011}}
+\end{figure}
+
+Temperature solutions for the central waste package, adjacent point and line sources 
+are superimposed to calculate the temperature at specific points in the repository.
+The equations for calculating temperature of each contributing component 
+are included below \cite{sutton_investigations_2011,greenberg_application_2012,huff_numerical_2012}. 
+
+The central drift consists of one finite line source which represents the central 
+waste package.
+\begin{align*}
+	T_{line}(t,x,y,z) &= \frac{1}{8 \pi k}  \int _{0}^{t} \frac{q_L(t')}{t-t'}e^{\frac{-(x^2+z^2)}{4\alpha(t-t')}} \\
+	&[erf[\frac{1}{2}\frac{y+L/2}{\sqrt{\alpha(t-t')}}]-erf[\frac{1}{2}\frac{y-L/2}{\sqrt{\alpha(t-t')}}]] dt'
+\end{align*}
+The central drift also consists of point sources that represent neighboring 
+waste packages in the central drift. 
+\begin{align*}
+	T_{point}(t,r) = \frac{1}{8 k \sqrt{\alpha} \pi^{3/2}} \int_{0}^{t}\frac{q(t')}{(t-t')^{3/2}}e^{\frac{-r^2}{4\alpha(t-t')}}dt'
+\end{align*}
+The neighboring drifts are represented by infinite line sources.  
+\begin{align*}
+	T_{\infty line}(t,x,z) = \frac{1}{4\pi k} \int_0^t \frac{q_L(t')}{t-t'} e^{\frac{-(x^2+z^2)}{4\alpha (t-t')}} dt'
+\end{align*}
+
+\end{block}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The third column
+
+\begin{block}{Waste Repository Model}
+\textbf{Quasi-Steady-State `Inside' Model}
+
+The `inside' model is considered to be at a quasi-steady-state condition because \gls{EBS}
+has a relatively low thermal mass compared to the infinite geologic medium 
+\cite{sutton_investigations_2011}. 
+The steady state calculation is performed at each time step with the heat source and 
+interface temperature as boundary conditions. 
+Figure \ref{fig:ebs_layers} illustrates an \gls{EBS} layout.
+
+\begin{figure}
+	\label{fig:ebs_layers}
+	\includegraphics[width=0.9\linewidth]{ebs_layers}
+	\caption{Layers in an Engineering Barrier System \cite{sutton_investigations_2011}}
+\end{figure}
+
+\end{block}
+
+
+\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
+\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+\begin{alertblock}{Future Work }
+\begin{itemize}
+		\item Run \Cyclus simulations with U.S. historical SNF inventory data, the spent fuel conditioning 
+		and repository models to study how waste package acceptance strategies impact repository loading
+\end{itemize}
+
+\end{alertblock}
+
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\setbeamercolor{block title}{fg=norange,bg=white} % Change the block title color
+
+\begin{block}{Acknowledgements}
+	
+	This research is being performed using funding received from 
+	the DOE Office of Nuclear Energy's Nuclear Energy University 
+	Program (Project 16-10512, DE-NE0008567) 'Demand-Driven Cycamore 
+	Archetypes'.
+	
+	
+\end{block}
+
+%----------------------------------------------------------------------------------------
+%	CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\setbeamercolor{block alerted title}{fg=white,bg=dblue} % Change the alert block title colors
+\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+
+\begin{alertblock}{Contact Information}
+	\setbeamercolor{block title}{fg=norange,bg=white} % Change the block title color
+	\begin{itemize}
+		\item Email: \href{mailto:gchee2@illinois.edu}{gchee2@illinois.edu}
+	\end{itemize}
+	
+\end{alertblock}
+
+\begin{block}{References}
+
+	{\footnotesize\bibliographystyle{abbrv} 
+	\bibliography{poster}}
+\end{block}
+
+
+%----------------------------------------------------------------------------------------
+
+
+
+\end{column} % End of the third column
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
+\end{document}
+\begin{column}{\sepwid}\end{column} % Empty spacer column
