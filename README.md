@@ -1,16 +1,17 @@
 # Purpose of this Repository
 
 *This template is adapted, with permission, from 
-[2019-chee-wm-poster](https://github.com/arfc/2019-chee-wm-poster). This repository is intended 
-as a template to standardize and ease the initialization process for Technical Reports from members 
-of the Advanced Reactors and Fuel Cycles group at the University of Illinois at Urbana-Champaign. 
-While this version of the template is geared towards an ARFC Member's report, it can be adapted 
+[2019-chee-wm-poster](https://github.com/arfc/2019-chee-wm-poster).*
+
+This repository is intended as a template to standardize and ease the initialization process for posters. 
+While this template is geared towards an ARFC Member's poster, it can be adapted 
 to any individual's needs.
 
 
 # How to Use this Template
 
-This repository serves as a template, which means that you can generate an exact copy of it without forking the repository. This copy will exist entirely separate from 
+This repository serves as a template, which means that you can generate an exact copy of it without forking, and 
+will exist separate from the template. 
 
 ## Steps to Use a Template:
 
@@ -20,7 +21,7 @@ This repository serves as a template, which means that you can generate an exact
     * Open a command line or terminal on your device and enter the directory into which you want to clone your template based repository. 
     * Enter `git clone git@github.com:USERNAME/REPONAME`. Where USERNAME and REPONAME are replaced respectively by your GitHub account's username and the name you chose to give this repository.
     * Enter `git remote add upstream git@github.com:USERNAME/REPONAME`
-4. Now you can make edits and changes to the files on your device and push changes to your Github repository as with any other repository.
+4. Now you can make edits and changes to the files on your device and push changes to your GitHub repository as with any other repository.
 
 
 # Adding Citations
@@ -40,7 +41,7 @@ section that will be generated in the document.
 
 
 # Adding an Acronym:
-Inside the Poster folder there is a file called acros, which contains a list of acronyms already. If you 
+There is a file called acros, which contains a list of acronyms already. If you 
 would like to add an acronym of your own, simply add a new line with the format:
 
 `\newacronym{call}{output}{What the acronym stands for}`
