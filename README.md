@@ -119,4 +119,5 @@ For zip, insert `zip`.
 
 
 # ARFC Poster Manual
-For ARFC specific guidelines for making a poster go [here](htttps://arfc.npre.illinois.edu)
+For ARFC specific guidelines for making a poster go
+[here](http://arfc.npre.illinois.edu/manual/guides/writing/poster/)
