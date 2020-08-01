@@ -10,18 +10,10 @@ to any individual's needs.
 
 # How to Use this Template
 
-This repository serves as a template, which means that you can generate an exact copy of it without forking, and 
-will exist separate from the template. 
-
-## Steps to Use a Template:
-
-1. Select the option to "Use this template," located next to the option to clone this repository.
-2. Name the repository, and select "Create repository from template."
-3. Clone your repository with SSH keys.
-    * Open a command line or terminal on your device and enter the directory into which you want to clone your template based repository. 
-    * Enter `git clone git@github.com:USERNAME/REPONAME`. Where USERNAME and REPONAME are replaced respectively by your GitHub account's username and the name you chose to give this repository.
-    * Enter `git remote add upstream git@github.com:USERNAME/REPONAME`
-4. Now you can make edits and changes to the files on your device and push changes to your GitHub repository as with any other repository.
+This repository serves as a template, which means that you can generate an exact copy of it 
+without forking, and will exist separate from the template. Learn how to create a repository from a 
+template 
+[here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
 
 
 # Adding Citations
@@ -79,13 +71,17 @@ If you were to then add another reference to the acronym ANS before what was the
 
 # Referencing Tables and Figures
 
-When you create a figure or a table, there is an optional line (which is included in the examples) 
-to create a label. To reference your figures and tables later in the document, include `fig:` (for 
-figures) or `tab:` (for tables) before the name. Later, when you wish to reference that figure or table, 
-you can use `\ref{fig:name}` or `\ref{tab:name}`. These elements will output the numbered 
-position that the figure or table appears in relative to other figures (i.e 
-`\ref{fig:name_of_figure1}` will output `[1]` for the first figure, and clicking on it will bring you 
-to that figure). Similar to using acronyms, this is feature will help to keep track of each figure or table.
+When you create a figure or a table, there is a line (which is included in the examples) 
+that creates a label. To reference your figures and tables later in the document, include `fig:` (for 
+figures) or `tab:` (for tables) before the name inside the label. Later, when you wish to reference that 
+figure or table, you can use `\ref{fig:name}` or `\ref{tab:name}`. These elements will output 
+the numbered position that the figure or table appears in relative to other figures.
+
+For example: 
+    `\ref{fig:name_of_figure1}` will output `[1]` for the first figure, and clicking on it will bring 
+    you to that figure). 
+
+Similar to using acronyms, this is feature will help to keep track of each figure or table.
 
 
 # How to Initialize the Abstract or Poster
